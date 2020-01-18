@@ -1,14 +1,13 @@
 from django.urls import path
 
-from . import views
-
+from .views import veg_app
 app_name = 'veg_app'
 urlpatterns = [
     # serves up views.home function in views
     # in this folder
-    path('', views.home, name='csa-home'),
-    path('about/', views.about, name='csa-about'),
-    
+    path('', veg_app.home, name='csa-home'),
+    path('about/', veg_app.about, name='csa-about'),
+
 
 
 ]
