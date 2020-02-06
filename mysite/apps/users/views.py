@@ -23,7 +23,7 @@ class FarmerSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('csa-home')
+        return redirect('veg_app:csa-home')
 
 class ConsumerSignUpView(CreateView):
     model = CustomUser
@@ -37,7 +37,7 @@ class ConsumerSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('csa-home')
+        return redirect('veg_app:csa-home')
 
 
 def register(request):

@@ -1,0 +1,29 @@
+{% extends "csaApp/base.html" %}
+{% block content %}
+
+
+<div class="container">
+  <div class="jumbotron">
+      <h1 class="display-4">Welcome {{ user.first_name }}</h1>
+      <p class="lead">You have {{ consumer.pickups_left }} pickups left</p>
+    </div>
+</div>
+
+<div class="row">
+  <div class="col sm-4">
+    <div class="card">
+  <div class="card-body">Celery</div>
+</div>
+  </div>
+  <div class="col sm-4">
+    <div class="card">
+  <div class="card-body">Basic card</div>
+</div>
+  </div>
+  <div class="col sm-4">
+    <div class="card">
+  <div class="card-body">Basic card</div>
+</div>
+  </div>
+</div>
+{% endblock content%}

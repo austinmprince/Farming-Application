@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-# from apps.veg_app import views as veg_views
-# from apps.users import views as user_views
 
 
 
@@ -25,9 +23,7 @@ urlpatterns = [
     path('', include('apps.veg_app.urls', namespace='veg_app')),
     path('register/', include('apps.users.urls', namespace='register')),
     path('admin/', admin.site.urls),
-    # path('register/', user_views.register, name='register'),
-    # path('register/user', user_views.ConsumerSignUpView.as_view(), name='register-user'),
-    # path('register/farmer', user_views.FarmerSignUpView.as_view(), name='register-farmer'),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
 
 ]

@@ -3,24 +3,29 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import Farmer, Consumer, CustomUser
 from django.db import transaction
+from ..veg_app import models as veg_models
 
 
 class FarmerRegisterForm(UserCreationForm):
-    farm_name = forms.CharField(max_length=150)
+    # made change here
+    #choices = [('' ,x.name) for x in veg_models.Farm.objects.all()]
+    # choices = veg_models.Farm.objects.all()
+    #farm = forms.ChoiceField(choices=choices)
     # email = forms.EmailField()
     # field_order = ['farm_name', 'username', 'email']
     class Meta(UserCreationForm.Meta):
         model = CustomUser
-        fields = ['first_name', 'last_name', 'username', 'email', 'farm_name']
+        #fields = ['first_name', 'last_name', 'username', 'email', 'farm']
+        fields = ['first_name', 'last_name', 'username', 'email']
 
 
-    @transaction.atomic
-    def save(self):
-        user = super().save(commit=False)
-        user.is_farmer = True
-        user.save()
-        farmer = Farmer.objects.create(user=user)
-        return user
+    # @transaction.atomic
+    # def save(self):
+    #     user = super().save(commit=False)
+    #     user.is_farmer = True
+    #     user.save()
+    #     farmer = Farmer.objects.create(user=user)
+    #     return user
 
 
 

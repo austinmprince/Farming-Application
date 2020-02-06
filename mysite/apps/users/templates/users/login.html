@@ -1,8 +1,9 @@
 {% extends "csaApp/base.html" %}
 {% load crispy_forms_tags %}
 {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
+<!-- <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}"> -->
 {% block content %}
+<div class="col-md-8">
     <div class="content-section">
       <form method="post" >
         {% csrf_token %}
@@ -19,5 +20,6 @@
           <a class="ml-2" href="{% url 'register:register' %}">Register</a>
         </small>
       </div>
+    </div>
     </div>
   {% endblock content %}

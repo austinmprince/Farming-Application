@@ -16,10 +16,10 @@ ul {
 .bg-steel {
   background-color: #32872f;
   /* background-color: #5f788a; */
-}
+/* } */
 
 
-.site-header .navbar-nav .nav-link {
+/* .site-header .navbar-nav .nav-link {
   color: #cbd5db;
 }
 
@@ -85,3 +85,8 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+/*
+ * Globals
+ */
+
+/* Links */
